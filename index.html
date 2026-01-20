@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Defend v.1.1 - By DEVMB</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-pink: #ff00ff;
+            --neon-blue: #00f2ff;
+            --neon-yellow: #f0ff00;
+            --neon-gold: #ffd700;
+            --neon-green: #39ff14;
+            --bg-dark: #050508;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #e0e0e0;
+            font-family: 'Rajdhani', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .font-orbitron { font-family: 'Orbitron', sans-serif; }
+
+        .neon-text-pink {
+            text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
+            color: #fff;
+        }
+
+        .neon-text-blue {
+            text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+            color: #fff;
+        }
+
+        .neon-text-gold {
+            text-shadow: 0 0 10px var(--neon-gold), 0 0 20px var(--neon-gold);
+            color: var(--neon-gold);
+        }
+
+        .map-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
+        }
+
+        .map-card:hover {
+            border-color: var(--neon-pink);
+            transform: translateY(-5px);
+        }
+
+        .guide-step {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 242, 255, 0.2);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .weapon-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .weapon-box:hover {
+            background: rgba(0, 242, 255, 0.05);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        .badge-new {
+            position: absolute;
+            top: 10px;
+            right: -25px;
+            background: var(--neon-pink);
+            color: white;
+            font-size: 10px;
+            padding: 2px 30px;
+            transform: rotate(45deg);
+            font-weight: bold;
+            box-shadow: 0 0 10px var(--neon-pink);
+        }
+
+        .vip-section {
+            background: linear-gradient(145deg, rgba(255, 215, 0, 0.1), rgba(0, 0, 0, 0.9));
+            border: 2px solid var(--neon-gold);
+        }
+
+        section { padding: 4rem 1rem; }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="h-[40vh] flex flex-col items-center justify-center text-center border-b border-gray-900">
+        <h1 class="text-6xl md:text-8xl font-orbitron font-bold neon-text-pink mb-4">NEON DEFEND</h1>
+        <p class="text-2xl text-cyan-400 tracking-[0.3em] font-light italic">VERSION 1.1 - UPDATE</p>
+        <div class="mt-8 px-6 py-2 bg-white/5 border border-white/10 rounded-lg text-center">
+            <span class="text-gray-500 uppercase text-xs tracking-widest block mb-1">Ngày cập nhật (Update Date)</span> 
+            <span class="text-white font-bold text-xl">19/01/2026</span>
+        </div>
+    </header>
+
+    <!-- Combat Description -->
+    <section class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-orbitron text-center mb-10 neon-text-blue uppercase">Chiến đấu trong game (Combat)</h2>
+        <div class="p-8 bg-blue-900/10 border border-blue-500/20 rounded-2xl text-center">
+            <p class="text-xl leading-relaxed text-gray-300">
+                Sử dụng ngân sách để xây dựng tháp phòng thủ, ngăn chặn kẻ địch xâm nhập thành trì. Mỗi quyết định nâng cấp hay vị trí đặt súng đều quyết định sự sống còn!
+            </p>
+        </div>
+    </section>
+
+    <!-- Weapons Library -->
+    <section class="max-w-6xl mx-auto py-10">
+        <h2 class="text-2xl font-orbitron text-center mb-12 text-gray-500 uppercase tracking-[0.5em]">Hệ thống vũ khí (Arsenal)</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 px-4">
+            <!-- Gun -->
+            <div class="weapon-box text-center">
+                <div class="text-4xl mb-3">🔫</div>
+                <p class="text-cyan-400 font-bold text-sm uppercase">Gun</p>
+            </div>
+            <!-- Sniper -->
+            <div class="weapon-box text-center">
+                <div class="text-4xl mb-3">🎯</div>
+                <p class="text-pink-500 font-bold text-sm uppercase">Sniper</p>
+            </div>
+            <!-- Rocket -->
+            <div class="weapon-box text-center">
+                <div class="text-4xl mb-3">🚀</div>
+                <p class="text-yellow-400 font-bold text-sm uppercase">Rocket</p>
+            </div>
+            <!-- Gun Rifle -->
+            <div class="weapon-box text-center">
+                <div class="text-4xl mb-3">🔫v2</div>
+                <p class="text-blue-400 font-bold text-sm uppercase">Gun Rifle</p>
+            </div>
+            
+            <!-- NEW UPDATED WEAPONS -->
+            <!-- Boom -->
+            <div class="weapon-box text-center border-pink-500/50">
+                <div class="badge-new">NEW</div>
+                <div class="text-4xl mb-3">💣</div>
+                <p class="text-red-500 font-bold text-sm uppercase">Boom</p>
+            </div>
+            <!-- Freeze -->
+            <div class="weapon-box text-center border-blue-400/50">
+                <div class="badge-new">NEW</div>
+                <div class="text-4xl mb-3">❄️</div>
+                <p class="text-blue-300 font-bold text-sm uppercase">Freeze</p>
+            </div>
+            <!-- Laser -->
+            <div class="weapon-box text-center border-cyan-500/50">
+                <div class="badge-new">NEW</div>
+                <div class="text-4xl mb-3">⚡</div>
+                <p class="text-cyan-300 font-bold text-sm uppercase">Laser</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Maps Section -->
+    <section class="bg-black/40">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-orbitron text-center mb-12 neon-text-pink uppercase">Các Map trong game (Maps)</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Map Easy -->
+                <div class="map-card p-8 rounded-2xl">
+                    <h3 class="text-3xl font-bold text-green-400 mb-4 uppercase">Map: Dễ (Easy)</h3>
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="text-gray-400">Số lượng (Waves):</span>
+                        <span class="text-white font-bold">20 WAVE</span>
+                    </div>
+                    <div class="p-4 bg-green-500/10 border border-green-500/30 rounded-lg">
+                        <p class="text-sm text-gray-400 uppercase">Phần thưởng (Reward)</p>
+                        <p class="text-2xl font-bold text-white">💰 1000 XU</p>
+                    </div>
+                </div>
+                <!-- Map Hard -->
+                <div class="map-card p-8 rounded-2xl border-pink-500/30">
+                    <h3 class="text-3xl font-bold text-red-500 mb-4 uppercase">Map: Khó (Hard)</h3>
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="text-gray-400">Số lượng (Waves):</span>
+                        <span class="text-white font-bold">35 WAVE</span>
+                    </div>
+                    <div class="p-4 bg-red-500/10 border border-red-500/30 rounded-lg">
+                        <p class="text-sm text-gray-400 uppercase">Phần thưởng (Reward)</p>
+                        <p class="text-2xl font-bold text-white">💰 2500 XU</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIP Section -->
+    <section class="max-w-4xl mx-auto">
+        <div class="vip-section p-10 rounded-3xl text-center relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-4 opacity-20 text-6xl">👑</div>
+            <h2 class="text-4xl font-orbitron font-bold neon-text-gold mb-8 uppercase">Cửa hàng VIP (VIP Shop)</h2>
+            <p class="text-xl text-gray-300 mb-10">Sử dụng Xu tích lũy được từ các trận đấu để sở hữu đặc quyền VIP!</p>
+            
+            <div class="max-w-lg mx-auto text-left">
+                <div class="bg-black/50 p-8 rounded-xl border border-yellow-600/30">
+                    <h4 class="text-yellow-500 font-bold mb-4 uppercase text-center text-2xl">⭐ Quyền lợi VIP</h4>
+                    <ul class="text-gray-300 space-y-4 text-lg">
+                        <li class="flex items-start">
+                            <span class="mr-2 text-yellow-500">•</span>
+                            <span>+300 tiền trong trận mỗi 25 giây</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-2 text-yellow-500">•</span>
+                            <span>Hồi sinh trụ tối đa 2 lần mỗi trận</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Play Guide -->
+    <section id="guide" class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-orbitron text-center mb-16 neon-text-blue uppercase">Hướng dẫn cách chơi (How to play)</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="guide-step">
+                <div class="text-4xl mb-4">💰</div>
+                <h4 class="font-bold text-cyan-400 mb-2 uppercase">Bước 1</h4>
+                <p class="text-gray-400 text-sm">Vào game có sẵn <span class="text-white">2000 tiền</span>. Chọn vũ khí bên dưới.</p>
+            </div>
+            <div class="guide-step">
+                <div class="text-4xl mb-4">🏗️</div>
+                <h4 class="font-bold text-cyan-400 mb-2 uppercase">Bước 2</h4>
+                <p class="text-gray-400 text-sm">Lắp vào vị trí hợp lý nhất để ngăn chặn kẻ địch xâm nhập vào thành trì của bạn.</p>
+            </div>
+            <div class="guide-step">
+                <div class="text-4xl mb-4">🆙</div>
+                <h4 class="font-bold text-cyan-400 mb-2 uppercase">Bước 3</h4>
+                <p class="text-gray-400 text-sm">Bấm vào vũ khí trên bản đồ để <span class="text-white">Nâng cấp</span> hoặc <span class="text-white">Bán</span>.</p>
+            </div>
+            <div class="guide-step">
+                <div class="text-4xl mb-4">🔵</div>
+                <h4 class="font-bold text-cyan-400 mb-2 uppercase">Bước 4</h4>
+                <p class="text-gray-400 text-sm">Bấm nút <span class="text-blue-500 font-bold uppercase">Xanh dương</span> (Góc phải trên) để bắt đầu Wave.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Author -->
+    <footer class="py-20 border-t border-gray-900 bg-black text-center">
+        <p class="text-gray-600 uppercase tracking-widest mb-2 text-sm">Tác giả sản phẩm (Author)</p>
+        <h3 class="text-6xl font-orbitron font-bold neon-text-pink">DEVMB</h3>
+        <div class="mt-4 text-cyan-900 font-mono text-xs">OFFICIAL NEON DEFEND LANDING PAGE v.1.1</div>
+    </footer>
+
+</body>
+</html>
+
